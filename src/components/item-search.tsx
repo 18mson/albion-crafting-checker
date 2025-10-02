@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Input } from '../components/ui/input';
-import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
-import { Search, Loader as Loader2, TrendingUp, TrendingDown, List } from 'lucide-react';
+import { Search, Loader as Loader2, List } from 'lucide-react';
 import { searchItems, fetchMarketData, getBestPrice, formatPrice, CITIES, type ItemSearchResult, type MarketData, type City } from '../lib/albion-api';
 import { CategoryBrowser } from './category-browser';
 
