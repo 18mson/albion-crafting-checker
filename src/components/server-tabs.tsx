@@ -23,7 +23,7 @@ const serverLabels = {
 
 export function ServerTabs({ value, onValueChange }: ServerTabsProps) {
   return (
-    <Tabs value={value} onValueChange={onValueChange} className="w-full">
+    <Tabs value={value} onValueChange={(v) => onValueChange(v as Server)} className="w-full">
       <TabsList className="grid w-full grid-cols-3 bg-slate-100 dark:bg-slate-800">
         {SERVERS.map((server) => {
           const Icon = serverIcons[server];

@@ -6,14 +6,14 @@ import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Search, Loader as Loader2, List } from 'lucide-react';
-import { searchItems, fetchMarketData, getBestPrice, formatPrice, CITIES, type ItemSearchResult, type MarketData, type City } from '../lib/albion-api';
+import { searchItems, fetchMarketData, getBestPrice, formatPrice, type ItemSearchResult, type City } from '../lib/albion-api';
 import { CategoryBrowser } from './category-browser';
 
 interface ItemSearchProps {
   onItemSelect: (item: ItemSearchResult, price: number) => void;
   placeholder?: string;
   type?: 'item' | 'material';
-  server?: Server;
+  server?: 'East' | 'West' | 'Europe';
   selectedCity?: City;
 }
 

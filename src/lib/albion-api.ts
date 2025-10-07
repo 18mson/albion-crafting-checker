@@ -269,7 +269,7 @@ export function searchItems(query: string): ItemSearchResult[] {
 export function getItemsByCategory(category: ItemCategory, subcategory?: string): ItemSearchResult[] {
   if (subcategory) {
     const itemIds = ITEM_CATEGORIES[category][subcategory as keyof typeof ITEM_CATEGORIES[typeof category]];
-    return itemIds.map(id => COMMON_ITEMS[id]).filter(Boolean);
+    return (itemIds as readonly string[]).map(id => COMMON_ITEMS[id]).filter(Boolean);
   } else {
     const allItemIds = Object.values(ITEM_CATEGORIES[category]).flat();
     return allItemIds.map(id => COMMON_ITEMS[id]).filter(Boolean);
